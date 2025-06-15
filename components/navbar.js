@@ -41,10 +41,10 @@ export default function Navbar() {
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
-    { name: 'Our Accomplishment', path: '/accomplishment' },
+    { name: 'Our Accomplishment', path: '/blog' },
     { name: 'Portfolio', path: '/projects' },
     { name: 'Services', path: '/services' },
-    { name: 'Contact', path: '' },
+    { name: 'Contact', path: '/contact' },
   ];
 
   return (
@@ -69,11 +69,10 @@ export default function Navbar() {
                 <Link
                   key={link.name}
                   href={link.path}
-                  className={`px-3 py-2 rounded-md text-base font-medium transition-colors ${
-                    pathname === link.path
+                  className={`px-3 py-2 rounded-md text-base font-medium transition-colors ${pathname === link.path
                       ? 'text-primary font-semibold'
                       : 'text-muted-foreground hover:text-primary hover:bg-accent'
-                  }`}
+                    }`}
                 >
                   {link.name}
                 </Link>
@@ -83,7 +82,9 @@ export default function Navbar() {
 
           {/* Desktop Button */}
           <div className="hidden md:flex items-center space-x-4">
-            <button className='bg-[#7412FF] px-6 py-2 rounded-2xl text-white text-lg font-semibold'>Book An Appointment</button>
+            <Link href="/appointment">
+              <button className='bg-[#7412FF] hover:bg-[#6c0fee] px-6 py-2 rounded-2xl text-white text-lg font-semibold'>Book An Appointment</button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -110,19 +111,21 @@ export default function Navbar() {
                 <Link
                   key={link.name}
                   href={link.path}
-                  className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
-                    pathname === link.path
+                  className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${pathname === link.path
                       ? 'text-primary font-semibold bg-accent/50'
                       : 'text-foreground hover:bg-accent hover:text-primary'
-                  }`}
+                    }`}
                   onClick={() => setIsOpen(false)}
                 >
                   {link.name}
                 </Link>
               );
             })}
+
             <div className="pt-2 w-full">
-              <Button className="">Book An Appointment</Button>
+              <Link href="/appointment">
+                <Button className="">Book An Appointment</Button>
+              </Link>
             </div>
           </div>
         </div>

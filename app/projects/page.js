@@ -2,6 +2,12 @@ import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
 import ProjectsGrid from '@/components/projects/projects-grid';
 import TestimonialsSection from '@/components/home/testimonials-section';
+import Image from 'next/image';
+import imgDesign from "../../public/assets/Group 43.png";
+import imgDesign2 from "../../public/assets/Group 44.png";
+import { ImFacebook } from 'react-icons/im';
+import { GrInstagram } from 'react-icons/gr';
+import { FaLinkedin, FaSquareXTwitter } from 'react-icons/fa6';
 
 
 export default function ProjectsPage() {
@@ -9,7 +15,37 @@ export default function ProjectsPage() {
     <div className="min-h-screen flex flex-col">
       <Navbar />
 
-      <main className="flex-1 pt-20">
+      <main className="flex-1 pt-20 relative">
+        <div className="-z-10   absolute top-48 -left-32">
+          <Image
+            src={imgDesign}
+            alt="Design Graphic"
+            className="md:w-72 "
+          />
+        </div>
+        <div className='flex justify-end items-start absolute top-[300px] right-9'>
+          <div className="space-y-4 ">
+            <ImFacebook className="text-black text-xl font-semibold" />
+            <GrInstagram className="text-black text-xl font-semibold" />
+            <FaLinkedin className="text-black text-xl font-semibold" />
+            <FaSquareXTwitter className="text-black text-xl font-semibold" />
+
+          </div>
+
+        </div>
+        <div className="-z-10   absolute top-[550px] right-0">
+          <Image
+            src={imgDesign2}
+            alt="Design Graphic"
+            className="md:w-[260px] "
+          />
+        </div>
+
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute w-96 h-96 rounded-full bg-[#7412FF]/20 md:bg-[#7412FF]/40 top-52 -right-32 blur-3xl" />
+          <div className="absolute w-96 h-96 rounded-full bg-[#7412FF]/30 top-40 -left-10 blur-3xl" />
+        </div>
+
         {/* Projects Hero */}
         <div className="md:max-w-2xl mx-auto text-center ">
           <div className="flex justify-center mt-6">
@@ -18,7 +54,7 @@ export default function ProjectsPage() {
             </h3>
           </div>
           <div className='flex justify-center mt-6'>
-            <h3 className="text-sm md:text-5xl  text-[#7412FF] text-center font-semibold px-6 py-2 bg-[#7412FF1A] rounded-full">
+            <h3 className="text-sm md:text-4xl  text-[#7412FF] text-center font-semibold px-6 py-2 bg-[#7412FF1A] rounded-full">
               Our Work Speaks for Itself
             </h3>
           </div>

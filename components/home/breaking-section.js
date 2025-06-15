@@ -30,7 +30,7 @@ const Breaking = () => {
     <div className='relative pt-10'>
       <div className='max-w-[380px] md:max-w-[750px] lg:max-w-7xl mx-auto'>
         <div className='flex justify-center'>
-          <div className="border-2 text-3xl md:text-5xl font-semibold border-[#7412FF] text-[#7412FF] md:px-8 px-6 py-2 md:py-3 rounded-full">
+          <div className="border-2 text-3xl md:text-4xl font-semibold border-[#7412FF] text-[#7412FF] md:px-8 px-6 py-2 md:py-2 rounded-full">
             <h3>Tools We Trust</h3>
           </div>
         </div>

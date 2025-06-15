@@ -134,19 +134,19 @@ export default function HeroSection() {
             </div>
           </div>
 
-          <div className=" w-full flex justify-start relative pb-16  pt-20">
-            <div className="space-y-8 md:ml-8">
+          <div className=" w-full flex justify-start relative pb-10  pt-20">
+            <div className="-mt-3 space-y-6 md:ml-8">
               <div className="flex items-center gap-5 md:-mr-32 md:w-80 ">
                 <div>
                   <Image
                     src={img1}
                     alt="Industries"
-                    className=" md:w-[120px]"
+                    className=" md:w-[110px]"
                   />
                 </div>
                 <div className="flex w-full justify-end">
                   <div>
-                    <div className="text-6xl text-[#7412FF] font-bold text-end">
+                    <div className="text-5xl text-[#7412FF] font-bold text-end">
                       20+
                     </div>
                     <p className="text-[18px] font-medium">Industries Served</p>
@@ -164,7 +164,7 @@ export default function HeroSection() {
                 </div>
                 <div className="flex w-full justify-end">
                   <div>
-                    <div className="text-6xl text-[#7412FF] font-bold text-end">
+                    <div className="text-5xl text-[#7412FF] font-bold text-end">
                       6+
                     </div>
                     <p className="text-[18px] font-medium">Years of Experience</p>
@@ -181,7 +181,7 @@ export default function HeroSection() {
                   />
                 </div>
                 <div>
-                  <div className="text-6xl text-[#7412FF] font-bold text-end">
+                  <div className="text-5xl text-[#7412FF] font-bold text-end">
                     40+
                   </div>
                   <p className="text-[18px] font-medium">
@@ -195,11 +195,11 @@ export default function HeroSection() {
                   <Image
                     src={img4}
                     alt="Projects"
-                    className=" md:w-[95px]"
+                    className=" md:w-[85px]"
                   />
                 </div>
                 <div>
-                  <div className="text-6xl text-[#7412FF] font-bold text-end">
+                  <div className="text-5xl text-[#7412FF] font-bold text-end">
                     120+
                   </div>
                   <p className="text-[18px] font-medium">
@@ -213,7 +213,7 @@ export default function HeroSection() {
               <Image
                 src={imgDesign2}
                 alt="Design Graphic"
-                className="md:w-72"
+                className="md:w-[260px]"
               />
             </div>
           </div>

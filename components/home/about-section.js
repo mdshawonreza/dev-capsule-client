@@ -9,7 +9,7 @@ const aboutUs = () => {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, amount: 0.3 });
     return (
-        <div className="relative  overflow-hidden  ">
+        <div className="relative  overflow-hidden md:-mt-5 ">
 
             {/* Animated Shapes */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none flex justify-center ">
@@ -27,7 +27,7 @@ const aboutUs = () => {
                 >
 
                     <div className='flex justify-center'>
-                        <h3 className="   text-white text-center text-3xl md:text-5xl font-semibold mb-3 px-10 py-2 bg-[#7412FF] rounded-full">
+                        <h3 className="   text-white text-center text-3xl md:text-4xl font-semibold mb-2 px-10 py-2 bg-[#7412FF] rounded-full">
                             Who We Are
                         </h3>
                     </div>

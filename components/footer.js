@@ -7,7 +7,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-black pt-20 rounded-t-[40px]">
+    <footer className="bg-black pt-10 rounded-t-[40px] z-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="flex justify-between items-start gap-8">
 
@@ -19,7 +19,7 @@ export default function Footer() {
                 className="md:w-[228px]"
               />
             </Link>
-            <p className="text-white text-base md:text-xl max-w-xl first-letter: font-medium  my-4" >
+            <p className="text-white text-base md:text-xl max-w-xl md:max-w-md first-letter: font-medium  my-4" >
               We specialize in creating high-performing 
               websites and digital products that are both 
               beautiful and functional.

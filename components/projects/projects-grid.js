@@ -105,7 +105,7 @@ export default function ProjectsGrid() {
 
   return (
     <section className="pb-16 pt-10 md:pb-20 ">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Category Filters */}
         <div className="flex flex-wrap gap-2 mb-12 justify-center">
           {categories.map((category) => (
