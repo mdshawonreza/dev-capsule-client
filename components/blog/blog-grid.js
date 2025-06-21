@@ -171,7 +171,7 @@ export default function BlogGrid() {
         )} */}
         
         {/* Search and Categories */}
-        <div className="mb-5 flex flex-col md:flex-row justify-between items-center">
+        <div className="mb-5 flex flex-col md:flex-row justify-between items-center gap-6 md:gap-0">
           
           
           <div className="flex flex-wrap gap-2 justify-center flex-1 ">
@@ -190,7 +190,7 @@ export default function BlogGrid() {
             <Search className="absolute left-3 top-3 h-5 w-5 text-muted-foreground" />
             <Input
               placeholder="Search articles..."
-              className="pl-10"
+              className="pl-10 rounded-full"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
@@ -209,8 +209,8 @@ export default function BlogGrid() {
           
           <div className="grid grid-cols-1   gap-8">
             {(searchTerm || activeCategory !== 'All' ? filteredPosts : regularPosts).map((post) => (
-              <div key={post.id} className="group  rounded-xl overflow-hidden shadow-xl flex p-5 z-10 bg-white">
-                <div className="relative overflow-hidden w-2/5">
+              <div key={post.id} className="group  rounded-xl overflow-hidden shadow-xl flex flex-col md:flex-row p-5 z-10 bg-white">
+                <div className="relative overflow-hidden md:w-2/5">
                   <Image
                     src={post.image}
                     alt={post.title}
@@ -219,7 +219,7 @@ export default function BlogGrid() {
                     className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105 rounded-xl"
                   />
                 </div>
-                <div className="w-3/5 p-6">
+                <div className="md:w-3/5 p-6">
                   {/* <div className="flex items-center justify-between text-sm text-muted-foreground mb-2">
                     <div className="flex items-center">
                       <Calendar className="w-4 h-4 mr-1" />
@@ -240,10 +240,10 @@ export default function BlogGrid() {
                         Contact
                       </button> */}
                     <button className="bg-[#7412FF]  text-white px-3 md:px-4 py-1 md:py-1 rounded-full transition duration-300 border-2 border-[#7412FF] text-sm md:text-base font-semibold flex justify-center items-center gap-2">
-                        Contact
+                        Adobe XD
                       </button>
                     <button className="bg-[#7412FF]  text-white px-3 md:px-4 py-1 md:py-1 rounded-full transition duration-300 border-2 border-[#7412FF] text-sm md:text-base font-semibold flex justify-center items-center gap-2">
-                        Contact
+                        Figma
                       </button>
                   </div>
                   

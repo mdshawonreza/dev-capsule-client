@@ -23,7 +23,7 @@ const categories = [
 const projectsData = [
   {
     id: 1,
-    title: 'TechHub E-commerce Platform',
+    title: 'TechHub E-commerce ',
     category: 'Web Development',
     description: "A fully responsive e-commerce website with modern UI/UX design, seamless checkout process, and admin dashboard.",
     image: 'https://i.ibb.co/tRxDP7X/Rectangle-15.png',
@@ -31,7 +31,7 @@ const projectsData = [
   },
   {
     id: 2,
-    title: 'Nomad Coffee Branding',
+    title: 'Nomad  Branding',
     category: 'UI/UX Design',
     description: "A fully responsive e-commerce website with modern UI/UX design, seamless checkout process, and admin dashboard.",
     image: 'https://i.ibb.co/k2C8WV2T/Rectangle-14.png',
@@ -39,7 +39,7 @@ const projectsData = [
   },
   {
     id: 3,
-    title: 'Altitude Athletic Campaign',
+    title: 'Altitude Athletic ',
     category: 'SaaS',
     description: "A fully responsive e-commerce website with modern UI/UX design, seamless checkout process, and admin dashboard.",
     image: 'https://i.ibb.co/Pv1d5TGp/Rectangle-11.png',
@@ -55,7 +55,7 @@ const projectsData = [
   },
   {
     id: 5,
-    title: 'Urban Festival Promotion',
+    title: 'Urban  Promotion',
     category: 'E-Commerce',
     description: "A fully responsive e-commerce website with modern UI/UX design, seamless checkout process, and admin dashboard.",
     image: 'https://i.ibb.co/MxkmSTf7/Rectangle-13.png',
@@ -105,7 +105,7 @@ export default function ProjectsGrid() {
 
   return (
     <section className="pb-16 pt-10 md:pb-20 ">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[390px] md:max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Category Filters */}
         <div className="flex flex-wrap gap-2 mb-12 justify-center">
           {categories.map((category) => (

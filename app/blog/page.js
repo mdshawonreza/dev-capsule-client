@@ -26,21 +26,21 @@ export default function BlogPage() {
       <Navbar />
 
       <main className="flex-1 relative">
-        <div className="-z-10   absolute top-48 -left-32">
+        <div className="-z-10 hidden md:flex   absolute top-96 md:top-48 left-3 md:-left-32">
           <Image
             src={imgDesign}
             alt="Design Graphic"
-            className="md:w-72 "
+            className="w-28 md:w-72 "
           />
         </div>
-        <div className="-z-10   absolute bottom-10 right-0">
+        <div className="-z-10 hidden md:flex  absolute bottom-10 right-0">
           <Image
             src={imgDesign2}
             alt="Design Graphic"
-            className="md:w-[260px] "
+            className="w-[200px] md:w-[260px] "
           />
         </div>
-        <div className='flex justify-end items-start absolute top-[300px] right-9'>
+        <div className='hidden md:flex  justify-end items-start absolute top-[300px] right-3.5 md:right-9'>
           <div className="space-y-4 ">
             <ImFacebook className="text-black text-xl font-semibold" />
             <GrInstagram className="text-black text-xl font-semibold" />

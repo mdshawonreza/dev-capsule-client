@@ -126,21 +126,21 @@ export default function AboutPage() {
             <Navbar></Navbar>
             {/* Hero Section */}
             <div className="relative" >
-                <div className="   absolute top-1/2 -translate-y-[442px] right-0">
+                <div className=" hidden md:flex  absolute -bottom-[400px] md:top-1/2 -translate-y-[442px] right-0">
                     <Image
                         src={imgDesign2}
                         alt="Design Graphic"
-                        className="md:w-[260px] -z-10"
+                        className="w-[200px] md:w-[260px] -z-10"
                     />
                 </div>
-                <div className="-z-10   absolute top-80 left-5">
+                <div className="-z-10 hidden md:flex   absolute top-40 md:top-80 left-3 md:left-5">
                     <Image
                         src={imgDesign}
                         alt="Design Graphic"
-                        className="md:w-72 "
+                        className="w-28 md:w-72 "
                     />
                 </div>
-                <div className='flex justify-end items-start absolute top-[300px] right-9'>
+                <div className='hidden md:flex  justify-end items-start absolute top-[300px] md:top-[300px] right-5 md:right-9'>
                     <div className="space-y-4 ">
                         <ImFacebook className="text-black text-xl font-semibold" />
                         <GrInstagram className="text-black text-xl font-semibold" />
@@ -160,7 +160,7 @@ export default function AboutPage() {
 
 
 
-                <section className="relative pb-10  pt-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+                <section className="relative pb-10 pt-24 md:pt-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
                     <div className="absolute  "></div>
                     <motion.div
                         ref={ref}
@@ -183,7 +183,7 @@ export default function AboutPage() {
                     </motion.div>
 
                 </section>
-                <div className="px-4 pt-4 pb-16 mx-auto sm:max-w-xl md:max-w-5xl md:px-24 lg:px-8 lg:pb-20">
+                <div className="px-4 pt-4 pb-16 mx-auto sm:max-w-sm md:max-w-5xl md:px-24 lg:px-8 lg:pb-20">
 
 
                     <div className="grid max-w-5xl mx-auto space-y-6 lg:grid-cols-2 lg:space-y-0 lg:divide-x">
@@ -254,7 +254,7 @@ export default function AboutPage() {
                                 </div>
                             </div>
 
-                            <div className="flex flex-col max-w-md sm:flex-row">
+                            <div className="flex flex-col max-w-sm sm:flex-row">
                                 <div className="mb-4 mr-4">
                                     <div className="flex items-center justify-center w-12 h-12 rounded-full bg-indigo-50">
                                         <svg className="w-8 h-8 text-deep-purple-accent-400 sm:w-10 sm:h-10" stroke="currentColor" viewBox="0 0 52 52">
@@ -270,7 +270,7 @@ export default function AboutPage() {
                                 </div>
                             </div>
 
-                            <div className="flex flex-col max-w-md sm:flex-row">
+                            <div className="flex flex-col max-w-sm sm:flex-row">
                                 <div className="mb-4 mr-4">
                                     <div className="flex items-center justify-center w-12 h-12 rounded-full bg-indigo-50">
                                         <svg className="w-8 h-8 text-deep-purple-accent-400 sm:w-10 sm:h-10" stroke="currentColor" viewBox="0 0 52 52">

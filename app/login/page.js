@@ -12,6 +12,7 @@ import { Alert, AlertDescription } from '@/components/ui/alert';
 import { useAuth } from '@/lib/auth';
 import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
+import TestimonialsSection from '@/components/home/testimonials-section';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -113,6 +114,7 @@ export default function LoginPage() {
           </CardFooter>
         </Card>
       </main>
+      <TestimonialsSection></TestimonialsSection>
       
       <Footer />
     </div>

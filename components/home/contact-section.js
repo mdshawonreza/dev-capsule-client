@@ -13,6 +13,8 @@ import { MdArrowOutward } from "react-icons/md";
 import { LuArrowDownRight } from "react-icons/lu";
 import "swiper/css";
 import { FaPhone } from "react-icons/fa6";
+import Link from 'next/link';
+
 
 const NavigationButton = ({ direction, onClick }) => (
   <div>
@@ -58,7 +60,7 @@ const slidesData = [
 const SlideContent = ({ slide }) => {
   return (
     <div className="w-full flex flex-col items-center z-20 justify-center p-4 text-center">
-      <div className="flex items-center justify-center w-10 h-10 border-2  border-[#7412FF] rounded-full animate-ping1 absolute right-[5.5px] md:right-[16.5px] -mt-[94px] md:-mt-[179px]">
+      <div className="hidden md:flex items-center justify-center w-11 h-11 border-2  border-[#7412FF] rounded-full animate-ping1 absolute right-[5.5px] md:right-[15px] -mt-[94px] md:-mt-[180.3px]">
 
       </div>
       <Image
@@ -125,7 +127,11 @@ export default function ContactSection({ slides = slidesData }) {
   }, [swiperInstance]);
 
   return (
-    <section id="contact">
+    <section id="contact" className="relative pb-10 -mb-10 md:-mb-0 md:pb-0">
+       <div className="absolute flex md:hidden inset-0 overflow-hidden pointer-events-none  justify-center ">
+            <div className="absolute w-[450px] md:w-[1100px] h-[200px] md:h-[500px] rounded-full bg-[#7412FF]/40  blur-3xl bottom-20 md:bottom-64" />
+            {/* <div className="absolute w-[500px] h-[500px] rounded-full bg-[#7412FF]/40 top-96 left-20 blur-3xl" /> */}
+          </div>
       <div className="max-w-sm md:max-w-4xl lg:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
         <motion.div
           ref={ref}
@@ -134,7 +140,7 @@ export default function ContactSection({ slides = slidesData }) {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <div className="h-[340px] md:h-[790px]  w-full relative max-w-4xl mx-auto">
+          <div className="h-[340px] md:h-[755px]  w-full relative max-w-4xl mx-auto">
             <Swiper
               direction="vertical"
               slidesPerView={1}
@@ -193,16 +199,19 @@ export default function ContactSection({ slides = slidesData }) {
           <div className="max-w-4xl mx-auto">
 
 
-            <div className="mb-4 transition-shadow duration-300 lg:mb-6">
+            <div className="mb-4 mt-5 transition-shadow duration-300 lg:mb-6">
               <div className="flex justify-center mt-2 md:mt-0">
                 <div className="space-x-4 flex ">
+                  <Link  href="/contact">
                   <button className="hover:bg-[#7412FF] text-[#7412FF] hover:text-white px-3 md:px-6 py-1 md:py-2 rounded-full transition duration-300 border-2 border-[#7412FF] text-sm md:text-xl font-semibold flex justify-center items-center gap-2">
                     <FaPhone /> Contact
                   </button>
-
+                  </Link>
+                  <Link  href="/appointment">
                   <button className="hover:bg-[#7412FF] text-[#7412FF] hover:text-white px-3 md:px-6 py-1 md:py-2 rounded-full transition duration-300 border-2 border-[#7412FF] text-sm md:text-xl font-semibold flex justify-center items-center gap-2">
                     Free Consultancy
                   </button>
+                  </Link>
 
 
                 </div>

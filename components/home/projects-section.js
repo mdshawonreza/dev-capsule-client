@@ -11,7 +11,7 @@ export default function ProjectsPage() {
         {/* Projects Hero */}
         <div className="md:max-w-2xl mx-auto text-center ">
               <div className='flex justify-center'>
-                <h3 className="text-sm md:text-4xl  text-[#7412FF] text-center font-semibold px-6 py-2 bg-[#7412FF1A] rounded-full">
+                <h3 className="text-2xl md:text-4xl  text-[#7412FF] text-center font-semibold px-6 py-2 bg-[#7412FF1A] rounded-full">
                   Our Work Speaks for Itself
                 </h3>
               </div>

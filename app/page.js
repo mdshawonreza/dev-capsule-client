@@ -21,7 +21,7 @@ export default function Home() {
         <ProjectsSection />
         <BreakingSection></BreakingSection>
         <ContactSection />
-        <div className="absolute inset-0  overflow-hidden pointer-events-none   top-[84%] md:top-1/2 md:translate-y-[100px]">
+        <div className="md:flex hidden absolute inset-0  overflow-hidden pointer-events-none   top-[84%] md:top-1/2 md:translate-y-[100px]">
           <div className="absolute w-[700px] md:w-[650px] h-[350px] md:h-[400px] rounded-full bg-[#7412FF]/20 top-40 md:-right-10 blur-3xl" />
           <div className="absolute w-[300px] md:w-[650px] h-[250px] md:h-[400px] rounded-full bg-[#7412FF]/20 top-40 md:-left-10 blur-3xl" />
         </div>

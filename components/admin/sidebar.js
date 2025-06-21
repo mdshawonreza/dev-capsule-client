@@ -27,8 +27,8 @@ export default function AdminSidebar() {
       icon: Briefcase
     },
     {
-      name: 'Blog Posts',
-      path: '/admin/blog',
+      name: 'Appointments',
+      path: '/admin/appointment',
       icon: FileText
     },
     {

@@ -7,6 +7,8 @@ import { StarIcon } from 'lucide-react';
 import { FaPhone } from 'react-icons/fa6';
 import img2 from '../../public/assets/Group 46.png';
 import img1 from '../../public/assets/Group 47.png';
+import Link from 'next/link';
+
 
 export default function TestimonialsSection() {
   const ref = useRef(null);
@@ -15,7 +17,7 @@ export default function TestimonialsSection() {
 
 
   return (
-    <section id="contact" className="relative">
+    <section id="contact" className="relative z-40">
       <div className="md:max-w-[1080px] mx-auto py-10 px-4 sm:px-6 lg:px-8 bg-[#E0D9FF] rounded-[50px] -mb-14  flex  justify-between ">
         <div className=' md:w-[170px]'>
           <Image
@@ -47,13 +49,18 @@ export default function TestimonialsSection() {
 
             <div className="mb-4 transition-shadow duration-300  lg:mb-6">
               <div className='flex justify-center'>
-                <div className="space-x-4 flex -mr-10">
-                  <button className="hover:bg-[#7412FF] text-[#7412FF] hover:text-white px-3 md:px-6 py-1 md:py-2 rounded-full transition duration-300 border-2 border-[#7412FF] text-sm md:text-xl font-semibold flex justify-center items-center gap-2 -ml-10">
+                <div className="space-x-4 flex ">
+                  <Link   href="/contact">
+                  <button className="hover:bg-[#7412FF] text-[#7412FF] hover:text-white px-3 md:px-6 py-1 md:py-2 rounded-full transition duration-300 border-2 border-[#7412FF] text-sm md:text-xl font-semibold flex justify-center items-center gap-2 -ml-8 md:ml-0">
                     <FaPhone /> Contact
                   </button>
-                  <button className="hover:bg-[#7412FF] text-[#7412FF] hover:text-white px-3 md:px-6 py-1 md:py-2 rounded-full transition duration-300 border-2 border-[#7412FF] text-sm md:text-xl font-semibold flex justify-center items-center gap-2 -ml-10">
+                  </Link>
+
+                  <Link  href="/appointment">
+                  <button className="hover:bg-[#7412FF] text-[#7412FF] hover:text-white px-3 md:px-6 py-1 md:py-2 rounded-full transition duration-300 border-2 border-[#7412FF] text-sm md:text-xl font-semibold flex justify-center items-center gap-2 -mr-8 md:mr-0">  
                     Free Consultancy
                   </button>
+                  </Link>
 
 
                 </div>

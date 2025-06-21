@@ -4,6 +4,7 @@ import { motion, useInView } from 'framer-motion';
 import Image from 'next/image';
 import img1 from '../../public/assets/May 5, 2025, 10_45_16 PM 1.png';
 import { FaArrowRight, FaPhone } from 'react-icons/fa6';
+import Link from 'next/link';
 
 const aboutUs = () => {
     const ref = useRef(null);
@@ -41,13 +42,17 @@ const aboutUs = () => {
                         <div className="mb-4 transition-shadow duration-300  lg:mb-6">
                             <div className='flex justify-center mb-6'>
                                 <div className="space-x-4 flex ">
+                                    <Link  href="/contact">
                                     <button className="hover:bg-[#7412FF] text-[#7412FF] hover:text-white px-3 md:px-6 py-1 md:py-2 rounded-full transition duration-300 border-2 border-[#7412FF] text-sm md:text-xl font-semibold flex justify-center items-center gap-2">
                                         <FaPhone /> Contact
                                     </button>
+                                    </Link>
 
+                                    <Link  href="/appointment">
                                     <button className="hover:bg-[#7412FF] text-[#7412FF] hover:text-white px-3 md:px-6 py-1 md:py-2 rounded-full transition duration-300 border-2 border-[#7412FF] text-sm md:text-xl font-semibold flex justify-center items-center gap-2">
                                         Free Consultancy
                                     </button>
+                                    </Link>
 
 
 

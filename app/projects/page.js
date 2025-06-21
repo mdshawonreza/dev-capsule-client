@@ -16,14 +16,14 @@ export default function ProjectsPage() {
       <Navbar />
 
       <main className="flex-1 pt-20 relative">
-        <div className="-z-10   absolute top-48 -left-32">
+        <div className="-z-10 hidden md:flex  absolute top-80 md:top-48 left-3 md:-left-32">
           <Image
             src={imgDesign}
             alt="Design Graphic"
-            className="md:w-72 "
+            className="w-28 md:w-72 "
           />
         </div>
-        <div className='flex justify-end items-start absolute top-[300px] right-9'>
+        <div className='flex justify-end items-start absolute top-[300px] md:top-[300px] right-5 md:right-9'>
           <div className="space-y-4 ">
             <ImFacebook className="text-black text-xl font-semibold" />
             <GrInstagram className="text-black text-xl font-semibold" />
@@ -33,11 +33,11 @@ export default function ProjectsPage() {
           </div>
 
         </div>
-        <div className="-z-10   absolute top-[550px] right-0">
+        <div className="-z-10 hidden md:flex  absolute top-1/2 md:top-[550px] right-0">
           <Image
             src={imgDesign2}
             alt="Design Graphic"
-            className="md:w-[260px] "
+            className="w-[200px] md:w-[260px] "
           />
         </div>
 
@@ -54,7 +54,7 @@ export default function ProjectsPage() {
             </h3>
           </div>
           <div className='flex justify-center mt-6'>
-            <h3 className="text-sm md:text-4xl  text-[#7412FF] text-center font-semibold px-6 py-2 bg-[#7412FF1A] rounded-full">
+            <h3 className="text-2xl md:text-4xl  text-[#7412FF] text-center font-semibold px-6 py-2 bg-[#7412FF1A] rounded-full">
               Our Work Speaks for Itself
             </h3>
           </div>

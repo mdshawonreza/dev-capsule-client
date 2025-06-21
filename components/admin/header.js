@@ -17,7 +17,7 @@ export default function AdminHeader() {
         <h1 className="text-lg font-semibold text-red-800">Admin Panel</h1>
         
         <div className="flex items-center space-x-4">
-          <DropdownMenu>
+          {/* <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" size="icon">
                 {theme === "light" ? (
@@ -41,7 +41,7 @@ export default function AdminHeader() {
                 System
               </DropdownMenuItem>
             </DropdownMenuContent>
-          </DropdownMenu>
+          </DropdownMenu> */}
           
           <Button variant="ghost" size="icon">
             <Bell className="h-5 w-5" />

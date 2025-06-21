@@ -29,20 +29,58 @@ export default function ContactPage() {
   }, []);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.1 });
+
+
+  const [formData, setFormData] = useState({
+    full_name: '',
+    email: '',
+    service: '',
+    budget: '',
+    description: '',
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+     console.log("Submitting form with data:", formData);
+
+    // emailjs.send(
+    //   'service_z9grx78',     // e.g. service_abc123
+    //   'YOUR_TEMPLATE_ID',    // e.g. template_xyz789
+    //   formData,
+    //   '_kJS9IiTVrRw4fRz3'      // e.g. _Gx3T3LAbCdEfGH
+    // ).then((result) => {
+    //   alert('Message sent successfully!');
+    //   setFormData({
+    //     full_name: '',
+    //     email: '',
+    //     service: '',
+    //     budget: '',
+    //     description: '',
+    //   });
+    // }).catch((error) => {
+    //   alert('Failed to send message.');
+    //   console.error(error);
+    // });
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
 
       <main className="flex-1 relative">
-        <div className="   absolute bottom-10 right-0">
+        <div className=" -z-10  absolute bottom-3 right-0">
           <Image
             src={imgDesign2}
             alt="Design Graphic"
-            className="md:w-[260px]"
+            className="w-[200px] md:w-[260px]"
           />
         </div>
 
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
           <div className="absolute w-96 h-96 rounded-full bg-[#7412FF]/20 md:bg-[#7412FF]/40 top-52 -right-32 blur-3xl" />
           <div className="absolute w-96 h-96 rounded-full bg-[#7412FF]/30 top-40 -left-10 blur-3xl" />
         </div>
@@ -74,11 +112,11 @@ export default function ContactPage() {
         </section>
 
         {/* Contact Form & Info */}
-        <section className="py-8 md:py-12 mb-8">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
-            <div className="flex justify-start items-start gap-12 ">
+        <section className="py-8 md:py-12 mb-8  ">
+          <div className="max-w-sm md:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
+            <div className="flex justify-center md:justify-start items-start gap-12 ">
               {/* Contact Form */}
-              <div className=' w-full'>
+              <div className='hidden md:flex w-full'>
                 <Image
                   src={imgDesign}
                   alt="Design Graphic"
@@ -86,11 +124,21 @@ export default function ContactPage() {
                 />
 
               </div>
+              <div className='flex md:hidden justify-end items-start absolute top-[300px] right-1.5 md:right-9'>
+                <div className="space-y-4 ">
+                  <ImFacebook className="text-black text-xl font-semibold" />
+                  <GrInstagram className="text-black text-xl font-semibold" />
+                  <FaLinkedin className="text-black text-xl font-semibold" />
+                  <FaSquareXTwitter className="text-black text-xl font-semibold" />
+
+                </div>
+
+              </div>
               <div>
-                <Card className="border border-border md:w-[480px]">
+                <Card className="border border-border w-full md:w-[480px] z-40 bg-white">
                   <CardContent className="p-6 md:p-8">
 
-                    <form className="space-y-4">
+                    <form onSubmit={handleSubmit} className="space-y-4">
                       <div className="mb-3">
                         <fieldset className="border-2 border-[#7412FF] rounded-xl px-4 pt-1 pb-3">
                           <legend className="text-[#7412FF] font-semibold text-xl px-2">
@@ -100,6 +148,11 @@ export default function ContactPage() {
                           <input
                             id="name"
                             type="text"
+                            value={formData.full_name}
+                            onChange={handleChange}
+                            required
+                            name="full_name"
+                           
 
 
                             placeholder="Enter your full name"
@@ -118,7 +171,10 @@ export default function ContactPage() {
                           <input
                             id="email"
                             type="email"
-
+                            value={formData.email}
+                            onChange={handleChange}
+                            required
+                             name="email"
 
                             placeholder="Enter your email"
                             className={`w-full  pr-4    
@@ -136,8 +192,12 @@ export default function ContactPage() {
 
                           <select
                             id="service"
+                             name="service"
+                            value={formData.service}
+                            onChange={handleChange}
                             className="w-full pr-4  rounded-md focus:outline-none transition-colors text-base"
-                            defaultValue=""
+
+                            required
                           >
                             <option value="" disabled>
                               Select service
@@ -158,9 +218,13 @@ export default function ContactPage() {
                           </legend>
 
                           <select
+                            value={formData.budget}
+                            onChange={handleChange}
                             id="budgetRange"
+                            name="budget"
                             className="w-full pr-4  rounded-md focus:outline-none transition-colors  text-base"
-                            defaultValue=""
+                            required
+
                           >
                             <option className='' value="" disabled>
                               Select range
@@ -181,6 +245,9 @@ export default function ContactPage() {
                           <input
                             id="name"
                             type="text"
+                            name="description"
+                            value={formData.description}
+                            onChange={handleChange}
 
 
                             placeholder="Optional"
@@ -199,8 +266,8 @@ export default function ContactPage() {
                       </div> */}
 
                       <div className="flex justify-end ">
-                        <button className='w-full py-2 bg-[#7412FF] text-white flex justify-center items-center gap-1 rounded-xl'><Send className="w-4 h-4 mr-2" /> Submit </button>
-                        
+                        <button  type="submit"  className='w-full py-2 bg-[#7412FF] text-white flex justify-center items-center gap-1 rounded-xl'><Send className="w-4 h-4 mr-2" /> Submit </button>
+
                       </div>
                     </form>
                   </CardContent>
@@ -208,7 +275,7 @@ export default function ContactPage() {
               </div>
 
               {/* Contact Info */}
-              <div className=' w-full'>
+              <div className='hidden md:flex w-full'>
                 <div className='flex justify-end items-start w-full'>
                   <div className="space-y-4 ">
                     <ImFacebook className="text-black text-xl font-semibold" />
@@ -228,7 +295,7 @@ export default function ContactPage() {
 
 
 
-        <section className="md:pb-24 ">
+        {/* <section className="md:pb-24 ">
           <div className="md:max-w-2xl mx-auto text-center ">
             <div className='flex justify-center'>
               <h3 className="text-sm md:text-4xl  text-[#7412FF] text-center font-semibold px-6 py-2 bg-[#7412FF1A] rounded-full">
@@ -253,22 +320,20 @@ export default function ContactPage() {
           </div>
           <div className="max-w-xl mx-auto relative">
             <div className='flex justify-between '>
-              {/* <div className=' flex  items-center'> */}
+            
               <h3 className='-rotate-90 text-[#7412FF] inline-block absolute font-semibold -left-40  top-1/2 text-3xl -translate-y-[18px]'>Follow our way</h3>
-              {/* </div> */}
+          
               <div className="aspect-[16/9] bg-muted rounded-lg overflow-hidden w-full">
                 <div className="w-full h-full flex items-center justify-center bg-muted/60">
                   <p className="text-muted-foreground">Map Embed Placeholder</p>
                 </div>
               </div>
-              {/* <div className=' flex  items-center'>
-              <h3 className='rotate-90 inline-block absolute  text-2xl'>To get us</h3>
-              </div> */}
+             
               <h3 className='rotate-90 inline-block absolute font-semibold -right-[116px] -translate-y-[18px] text-[#7412FF]  top-1/2 text-3xl'>To get us</h3>
 
             </div>
           </div>
-        </section>
+        </section> */}
       </main>
 
       <Footer />

@@ -70,8 +70,8 @@ export default function Navbar() {
                   key={link.name}
                   href={link.path}
                   className={`px-3 py-2 rounded-md text-base font-medium transition-colors ${pathname === link.path
-                      ? 'text-primary font-semibold'
-                      : 'text-muted-foreground hover:text-primary hover:bg-accent'
+                      ? 'text-primary font-semibold '
+                      : 'text-muted-foreground hover:text-primary   hover:bg-accent'
                     }`}
                 >
                   {link.name}
