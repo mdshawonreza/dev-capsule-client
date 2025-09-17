@@ -4,7 +4,7 @@
 
 import imgDesign from "../../public/assets/Group 43.png";
 import imgDesign2 from "../../public/assets/Group 44.png";
-
+import Swal from 'sweetalert2'
 
 import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
@@ -18,10 +18,14 @@ import Image from "next/image";
 import { ImFacebook } from "react-icons/im";
 import { GrInstagram } from "react-icons/gr";
 import { FaLinkedin, FaSquareXTwitter } from "react-icons/fa6";
+import Link from "next/link";
+import emailjs from "@emailjs/browser";
+
 
 export default function AppointmentPage() {
     const [isVisible, setIsVisible] = useState(false);
     const [step, setStep] = useState(1);
+    
 
     // Step 1 form states
     const [area, setArea] = useState('');
@@ -47,7 +51,7 @@ export default function AppointmentPage() {
 
     const handleNext = () => {
         if (!area || !timeZone || !preferredTime || !date) {
-            setMessage('Please fill all fields in Step 1.');
+            setMessage('⚠️ Please fill all fields in Step 1.');
             return;
         }
         setMessage('');
@@ -56,7 +60,7 @@ export default function AppointmentPage() {
 
     const handleSchedule = async () => {
         if (!name || !email || !details) {
-            setMessage('Please fill all fields in Step 2.');
+            setMessage('⚠️ Please fill all fields in Step 2.');
             return;
         }
         setMessage('');
@@ -74,34 +78,93 @@ export default function AppointmentPage() {
         };
         console.log(appointmentData)
 
-    //     emailjs.send(
-    //   'service_z9grx78',     // e.g. service_abc123
-    //   'YOUR_TEMPLATE_ID',    // e.g. template_xyz789
-    //   appointmentData,
-    //   '_kJS9IiTVrRw4fRz3'      // e.g. _Gx3T3LAbCdEfGH
-    // ).then((result) => {
-    //   alert('Message sent successfully!');
-    // //   setFormData({
-    // //     full_name: '',
-    // //     email: '',
-    // //     service: '',
-    // //     budget: '',
-    // //     description: '',
-    // //   });
-    // }).catch((error) => {
-    //   alert('Failed to send message.');
-    //   console.error(error);
-    // });
+        //     emailjs.send(
+        //   'service_z9grx78',     // e.g. service_abc123
+        //   'YOUR_TEMPLATE_ID',    // e.g. template_xyz789
+        //   appointmentData,
+        //   '_kJS9IiTVrRw4fRz3'      // e.g. _Gx3T3LAbCdEfGH
+        // ).then((result) => {
+        //   alert('Message sent successfully!');
+        // //   setFormData({
+        // //     full_name: '',
+        // //     email: '',
+        // //     service: '',
+        // //     budget: '',
+        // //     description: '',
+        // //   });
+        // }).catch((error) => {
+        //   alert('Failed to send message.');
+        //   console.error(error);
+        // });
+        emailjs
+            .send(
+                "service_lqk4fnc",       // তোমার Service ID
+                "template_sl2dvc8",      // তোমার Template ID
+                appointmentData,
+                "Lll9_5TRi66kgrqgP"      // তোমার Public Key
+            )
+            .then((result) => {
+                // Swal.fire({
+                //     icon: "success",
+                //      position: "center",
+                //     title: "✅ Appointment request sent!",
+                //     text: "Thank you for scheduling with us. We’ll contact you soon.",
+                //     showConfirmButton: false,
+                //     timer: 1500,
+                // });
+
+                // ফর্ম রিসেট
+                setArea("");
+                setTimeZone("");
+                setPreferredTime("");
+                setDate(null);
+                setName("");
+                setEmail("");
+                setDetails("");
+
+                // setTimeout(() => {
+                //     router.push("/");
+                // }, 2000);
+            })
+            .catch((error) => {
+                Swal.fire({
+                    icon: "error",
+                     position: "center",
+                    title: " Failed to send request",
+                    text: "Something went wrong. Please try again later.",
+                    showConfirmButton: false,
+                    timer: 1500,
+                });
+                console.error("EmailJS Error:", error);
+            })
+            .finally(() => {
+                setLoading(false);
+            });
 
         try {
-            const res = await fetch('https://dev-capsule-server.vercel.app/appointments', {
+            const res = await fetch('http://api.devcapsule.com/appointments', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(appointmentData),
             });
 
             if (res.ok) {
-                alert('Appointment scheduled successfully!');
+                // alert('Appointment scheduled successfully!');
+                // Swal.fire({
+                //     // position: "top-end",
+                //     icon: "success",
+                //     title: "Appointment scheduled successfully!",
+                //     showConfirmButton: false,
+                //     timer: 1500
+                // });
+                 Swal.fire({
+                    icon: "success",
+                     position: "center",
+                    title: " Appointment request sent!",
+                    text: "Thank you for scheduling with us. We’ll contact you soon.",
+                    showConfirmButton: false,
+                    timer: 1500,
+                });
                 router.push('/');
             } else {
                 setMessage('Failed to schedule appointment. Please try again.');
@@ -137,11 +200,28 @@ export default function AppointmentPage() {
                     />
                 </div>
                 <div className='hidden md:flex justify-end items-start absolute top-[300px] right-9'>
-                    <div className="space-y-4 ">
-                        <ImFacebook className="text-black text-xl font-semibold" />
-                        <GrInstagram className="text-black text-xl font-semibold" />
-                        <FaLinkedin className="text-black text-xl font-semibold" />
-                        <FaSquareXTwitter className="text-black text-xl font-semibold" />
+                    <div className="space-y-4    ">
+
+                        <div>
+                            <Link href="https://www.facebook.com/share/16YNTbkFNR/" target="_blank" rel="noopener noreferrer">
+                                <ImFacebook className="text-black text-xl transition-all duration-300 hover:text-[#7412FF] hover:scale-110" />
+                            </Link>
+                        </div>
+                        <div>
+                            <Link href="https://www.instagram.com/devcapsuleeu?igsh=d2djdDlidjdic3pz" target="_blank" rel="noopener noreferrer">
+                                <GrInstagram className="text-black text-xl transition-all duration-300 hover:text-[#7412FF] hover:scale-110" />
+                            </Link>
+                        </div>
+                        <div>
+                            <Link href="https://www.linkedin.com/company/dev-capsule/" target="_blank" rel="noopener noreferrer">
+                                <FaLinkedin className="text-black text-xl transition-all duration-300 hover:text-[#7412FF] hover:scale-110" />
+                            </Link>
+                        </div>
+                        <div>
+                            <Link href="https://x.com/dev_capsuleeu?t=i48UEkQwyAMfym8GjvNSAQ&s=09" target="_blank" rel="noopener noreferrer">
+                                <FaSquareXTwitter className="text-black text-xl transition-all duration-300 hover:text-[#7412FF] hover:scale-110" />
+                            </Link>
+                        </div>
 
                     </div>
 

@@ -20,8 +20,8 @@ export default function Footer() {
               />
             </Link>
             <p className="text-white text-base md:text-xl max-w-xl md:max-w-md first-letter: font-medium  my-4" >
-              We specialize in creating high-performing 
-              websites and digital products that are both 
+              We specialize in creating high-performing
+              websites and digital products that are both
               beautiful and functional.
             </p>
 
@@ -33,28 +33,28 @@ export default function Footer() {
 
             <div className=" flex flex-col md:flex-row justify-between gap-3 md:gap-7 md:items-center items-end">
               <h3>
-                <Link href="/" className="text-white md:text-xl font-semibold hover:text-[#7412FF] transition-colors text-end md:text-center">
+                <Link href="/about" className="text-white md:text-xl font-semibold hover:text-[#7412FF] transition-colors text-end md:text-center">
                   About
                 </Link>
               </h3>
               <h3 className="text-white md:text-xl font-semibold hover:text-[#7412FF] transition-colors  ">
-                <Link href="/">
+                <Link href="/blog">
                   Accomplishment
                 </Link>
               </h3>
               <h3>
-                <Link href="/" className="text-white md:text-xl font-semibold hover:text-[#7412FF] transition-colors">
+                <Link href="/projects" className="text-white md:text-xl font-semibold hover:text-[#7412FF] transition-colors">
                   Portfolio
                 </Link>
               </h3>
 
               <h3>
-                <Link href="/" className="text-white md:text-xl font-semibold  hover:text-[#7412FF] transition-colors">
+                <Link href="/services" className="text-white md:text-xl font-semibold  hover:text-[#7412FF] transition-colors">
                   Services
                 </Link>
               </h3>
               <h3>
-                <Link href="/" className="text-white md:text-xl font-semibold  hover:text-[#7412FF] transition-colors">
+                <Link href="/contact" className="text-white md:text-xl font-semibold  hover:text-[#7412FF] transition-colors">
                   Contact
                 </Link>
               </h3>
@@ -73,19 +73,19 @@ export default function Footer() {
 
 
               <div className="flex  space-x-4">
-                <Link href="#" className="text-white hover:text-[#7412FF] transition-colors">
+                <Link href="https://www.facebook.com/share/16YNTbkFNR/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#7412FF] transition-colors">
                   <Facebook size={30} />
                   <span className="sr-only">Facebook</span>
                 </Link>
-                <Link href="#" className="text-white hover:text-[#7412FF] transition-colors">
+                <Link href="https://x.com/dev_capsuleeu?t=i48UEkQwyAMfym8GjvNSAQ&s=09" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#7412FF] transition-colors">
                   <Twitter size={30} />
                   <span className="sr-only">Twitter</span>
                 </Link>
-                <Link href="#" className="text-white hover:text-[#7412FF] transition-colors">
+                <Link href="https://www.instagram.com/devcapsuleeu?igsh=d2djdDlidjdic3pz" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#7412FF] transition-colors">
                   <Instagram size={30} />
                   <span className="sr-only">Instagram</span>
                 </Link>
-                <Link href="#" className="text-white hover:text-[#7412FF] transition-colors">
+                <Link href="https://www.linkedin.com/company/dev-capsule/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#7412FF] transition-colors">
                   <Linkedin size={30} />
                   <span className="sr-only">LinkedIn</span>
                 </Link>
@@ -110,18 +110,18 @@ export default function Footer() {
 
             </div>
           </div>
-          
+
 
 
         </div>
         <div className='text-center mt-4'>
-             
-              <p className='text-base text-white font-normal md:hidden '>
-                © Devcapsule 2025 | All Rights Reserved
 
-              </p>
+          <p className='text-base text-white font-normal md:hidden '>
+            © Devcapsule 2025 | All Rights Reserved
 
-            </div>
+          </p>
+
+        </div>
 
 
       </div>

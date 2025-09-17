@@ -140,7 +140,7 @@ export default function ContactSection({ slides = slidesData }) {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <div className="h-[340px] md:h-[755px]  w-full relative max-w-4xl mx-auto">
+          <div className="h-[340px] md:h-[755px] lg:[800px]  w-full relative max-w-4xl mx-auto">
             <Swiper
               direction="vertical"
               slidesPerView={1}
@@ -190,16 +190,12 @@ export default function ContactSection({ slides = slidesData }) {
             )}
           </div>
 
-          {/* <div className="flex justify-center mt-10">
-            <h3 className="text-center text-5xl font-semibold mb-3 px-10 py-2">
-              Website Design & Development
-            </h3>
-          </div> */}
+          
 
           <div className="max-w-4xl mx-auto">
 
 
-            <div className="mb-4 mt-5 transition-shadow duration-300 lg:mb-6">
+            <div className="mb-4  transition-shadow duration-300 lg:mb-6">
               <div className="flex justify-center mt-2 md:mt-0">
                 <div className="space-x-4 flex ">
                   <Link  href="/contact">

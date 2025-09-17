@@ -10,7 +10,7 @@ const aboutUs = () => {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, amount: 0.3 });
     return (
-        <div className="relative  overflow-hidden md:-mt-5 ">
+        <div id="abc" className="relative  overflow-hidden md:-mt-5 ">
 
             {/* Animated Shapes */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none flex justify-center ">

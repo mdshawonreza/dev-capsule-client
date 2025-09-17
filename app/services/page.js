@@ -16,6 +16,7 @@ import imgDesign from "../../public/assets/Group 43.png";
 import imgDesign2 from "../../public/assets/Group 44.png";
 import { ImFacebook } from 'react-icons/im';
 import { GrInstagram } from 'react-icons/gr';
+import Link from 'next/link';
 
 export default function ServicesPage() {
   const [isVisible, setIsVisible] = useState(false);
@@ -44,14 +45,62 @@ export default function ServicesPage() {
             className="w-[200px] md:w-[260px] "
           />
         </div>
-        <div className='flex justify-end items-start absolute top-[300px] right-3.5 md:right-9'>
-          <div className="space-y-4 ">
-            <ImFacebook className="text-black text-xl font-semibold" />
-            <GrInstagram className="text-black text-xl font-semibold" />
-            <FaLinkedin className="text-black text-xl font-semibold" />
-            <FaSquareXTwitter className="text-black text-xl font-semibold" />
+        {/* <div className='flex justify-end items-start absolute top-[300px] right-3.5 md:right-9'>
+          <div className="space-y-4  ">
+          
+                      <div>
+                        <Link href="https://www.facebook.com/share/16YNTbkFNR/" target="_blank" rel="noopener noreferrer">
+                          <ImFacebook className="text-black text-xl transition-all duration-300 hover:text-[#7412FF] hover:scale-110" />
+                        </Link>
+                      </div>
+                      <div>
+                        <Link href="https://www.instagram.com/devcapsuleeu?igsh=d2djdDlidjdic3pz" target="_blank" rel="noopener noreferrer">
+                          <GrInstagram className="text-black text-xl transition-all duration-300 hover:text-[#7412FF] hover:scale-110" />
+                        </Link>
+                      </div>
+                      <div>
+                        <Link href="https://www.linkedin.com/company/dev-capsule/" target="_blank" rel="noopener noreferrer">
+                          <FaLinkedin className="text-black text-xl transition-all duration-300 hover:text-[#7412FF] hover:scale-110" />
+                        </Link>
+                      </div>
+                      <div>
+                        <Link href="https://x.com/dev_capsuleeu?t=i48UEkQwyAMfym8GjvNSAQ&s=09" target="_blank" rel="noopener noreferrer">
+                          <FaSquareXTwitter className="text-black text-xl transition-all duration-300 hover:text-[#7412FF] hover:scale-110" />
+                        </Link>
+                      </div>
+          
+                    </div>
+
+        </div> */}
+        <div className="absolute z-40  w-full h-[100vh] flex justify-end items-center  -mt-28 md:-mt-24 -ml-3 md:-ml-10">
+          <div className="space-y-4    ">
+
+            <div>
+              <Link href="https://www.facebook.com/share/16YNTbkFNR/" target="_blank" rel="noopener noreferrer">
+                <ImFacebook className="text-black text-xl transition-all duration-300 hover:text-[#7412FF] hover:scale-110" />
+              </Link>
+            </div>
+            <div>
+              <Link href="https://www.instagram.com/devcapsuleeu?igsh=d2djdDlidjdic3pz" target="_blank" rel="noopener noreferrer">
+                <GrInstagram className="text-black text-xl transition-all duration-300 hover:text-[#7412FF] hover:scale-110" />
+              </Link>
+            </div>
+            <div>
+              <Link href="https://www.linkedin.com/company/dev-capsule/" target="_blank" rel="noopener noreferrer">
+                <FaLinkedin className="text-black text-xl transition-all duration-300 hover:text-[#7412FF] hover:scale-110" />
+              </Link>
+            </div>
+            <div>
+              <Link href="https://x.com/dev_capsuleeu?t=i48UEkQwyAMfym8GjvNSAQ&s=09" target="_blank" rel="noopener noreferrer">
+                <FaSquareXTwitter className="text-black text-xl transition-all duration-300 hover:text-[#7412FF] hover:scale-110" />
+              </Link>
+            </div>
 
           </div>
+
+
+
+
 
         </div>
 
@@ -117,17 +166,17 @@ export default function ServicesPage() {
                   </div>
                   <p className="md:text-2xl font-normal text-[#000000] mb-4 ">
                     Deliver intuitive, engaging, and user-focused designs that bring digital experiences to life.
-Our UI/UX design service transforms your business goals into streamlined interfaces
-that are both beautiful and functional.</p>
+                    Our UI/UX design service transforms your business goals into streamlined interfaces
+                    that are both beautiful and functional.</p>
 
                   <div className='text-center mb-4'>
-                    
+
                     <p className="md:text-2xl font-normal text-[#000000]  "><span className="text-[#7412FF] font-semibold" >User Research & Analysis:</span> Empathy mapping, persona creation, and competitive analysis</p>
                     <p className="md:text-2xl font-normal text-[#000000]  "><span className="text-[#7412FF] font-semibold" >Wireframing & Prototyping:</span> Low- and high-fidelity wireframes and interactive prototypes</p>
                     <p className="md:text-2xl font-normal text-[#000000]  "><span className="text-[#7412FF] font-semibold" >User Interface Design:</span>Custom, responsive UI for web and mobile platforms</p>
                     <p className="md:text-2xl font-normal text-[#000000]  "><span className="text-[#7412FF] font-semibold" >Usability Testing:</span> In-depth testing with real users to validate designs</p>
                     <p className="md:text-2xl font-normal text-[#000000]  "><span className="text-[#7412FF] font-semibold" >Accessibility Optimization:</span>Compliance with WCAG guidelines for inclusive design</p>
-                    
+
 
 
 
@@ -141,9 +190,9 @@ that are both beautiful and functional.</p>
                       <button className="hover:bg-[#7412FF] text-[#7412FF] hover:text-white px-3 md:px-4 py-1 md:py-1 rounded-full transition duration-300 border-2 border-[#7412FF] text-sm md:text-base font-semibold flex justify-center items-center gap-2">
                         Figma
                       </button>
-                      
-                      
-                      
+
+
+
 
                     </div>
                   </div>
@@ -230,7 +279,7 @@ that are both beautiful and functional.</p>
                         Vue.js
                       </button>
                       <button className="hover:bg-[#7412FF] text-[#7412FF] hover:text-white px-3 md:px-4 py-1 md:py-1 rounded-full transition duration-300 border-2 border-[#7412FF] text-sm md:text-base font-semibold flex justify-center items-center gap-2">
-                      Next.js
+                        Next.js
                       </button>
                       <button className="hover:bg-[#7412FF] text-[#7412FF] hover:text-white px-3 md:px-4 py-1 md:py-1 rounded-full transition duration-300 border-2 border-[#7412FF] text-sm md:text-base font-semibold flex justify-center items-center gap-2">
                         Node.js
@@ -287,46 +336,46 @@ that are both beautiful and functional.</p>
                   />
                   <div className='flex justify-center'>
                     <h3 className="text-center text-xl md:text-5xl font-semibold mb-3 px-0 md:px-10 md:py-2">
-                     SaaS Development
+                      SaaS Development
                     </h3>
                   </div>
                   <p className="md:text-2xl font-normal text-[#000000] mb-4 ">Launch scalable and secure software-as-a-service products
-tailored to your industry. Our SaaS development services cover
-everything from MVP to enterprise-ready platforms.</p>
+                    tailored to your industry. Our SaaS development services cover
+                    everything from MVP to enterprise-ready platforms.</p>
 
                   <div className='text-center mb-4'>
 
-                    
+
                     <p className="md:text-2xl text-[#7412FF] font-semibold  ">
                       MVP Planning & Roadmapping
 
                     </p>
                     <p className="md:text-2xl text-[#7412FF] font-semibold  ">
-                     User Authentication & Role Management
+                      User Authentication & Role Management
 
                     </p>
                     <p className="md:text-2xl text-[#7412FF] font-semibold  ">
-                     Multi-Tenant Architecture
-
-
-                    </p>
-                    <p className="md:text-2xl text-[#7412FF] font-semibold  ">
-                    Billing & Subscription Management
+                      Multi-Tenant Architecture
 
 
                     </p>
                     <p className="md:text-2xl text-[#7412FF] font-semibold  ">
-                    Analytics & Reporting Dashboards
+                      Billing & Subscription Management
 
 
                     </p>
                     <p className="md:text-2xl text-[#7412FF] font-semibold  ">
-                    API Development & Integration
+                      Analytics & Reporting Dashboards
 
 
                     </p>
                     <p className="md:text-2xl text-[#7412FF] font-semibold  ">
-                   Ongoing Support & Maintenance
+                      API Development & Integration
+
+
+                    </p>
+                    <p className="md:text-2xl text-[#7412FF] font-semibold  ">
+                      Ongoing Support & Maintenance
 
 
                     </p>
@@ -358,7 +407,7 @@ everything from MVP to enterprise-ready platforms.</p>
                       <button className="hover:bg-[#7412FF] text-[#7412FF] hover:text-white px-3 md:px-4 py-1 md:py-1 rounded-full transition duration-300 border-2 border-[#7412FF] text-sm md:text-base font-semibold flex justify-center items-center gap-2">
                         Firebase
                       </button>
-                      
+
 
 
 
@@ -408,18 +457,18 @@ everything from MVP to enterprise-ready platforms.</p>
                   />
                   <div className='flex justify-center'>
                     <h3 className="text-center text-xl md:text-5xl font-semibold mb-3 px-0 md:px-10 md:py-2">
-                     E-Commerce
+                      E-Commerce
                     </h3>
                   </div>
                   <p className="md:text-2xl font-normal text-[#000000] mb-4 ">Create high-converting e-commerce experiences that drive sales and
-customer loyalty. Our e-commerce solutions are tailored to
-your brand, products, and target market.</p>
+                    customer loyalty. Our e-commerce solutions are tailored to
+                    your brand, products, and target market.</p>
 
                   <div className='text-center mb-4'>
 
-                    
+
                     <p className="md:text-2xl text-[#7412FF] font-semibold  ">
-                     Custom Storefront Design
+                      Custom Storefront Design
 
                     </p>
                     <p className="md:text-2xl text-[#7412FF] font-semibold  ">
@@ -427,7 +476,7 @@ your brand, products, and target market.</p>
 
                     </p>
                     <p className="md:text-2xl text-[#7412FF] font-semibold  ">
-                     Shopping Cart & Checkout Flow
+                      Shopping Cart & Checkout Flow
 
 
                     </p>
@@ -469,8 +518,8 @@ your brand, products, and target market.</p>
                       <button className="hover:bg-[#7412FF] text-[#7412FF] hover:text-white px-3 md:px-4 py-1 md:py-1 rounded-full transition duration-300 border-2 border-[#7412FF] text-sm md:text-base font-semibold flex justify-center items-center gap-2">
                         Mailchimp
                       </button>
-                      
-                      
+
+
 
 
 

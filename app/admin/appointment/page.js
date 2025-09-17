@@ -14,7 +14,7 @@ const AdminAppointmentPage = () => {
 
   // Fetch appointments on mount
   useEffect(() => {
-    fetch('https://dev-capsule-server.vercel.app/appointments')
+    fetch('http://api.devcapsule.com/appointments')
       .then(res => res.json())
       .then(data => {
         const withStatus = data.map(item => ({
@@ -32,7 +32,7 @@ const AdminAppointmentPage = () => {
     if (!itemToDelete) return;
 
     try {
-      const res = await fetch(`https://dev-capsule-server.vercel.app/appointments/${itemToDelete._id}`, {
+      const res = await fetch(`http://api.devcapsule.com/appointments/${itemToDelete._id}`, {
         method: 'DELETE',
       });
 
@@ -61,7 +61,7 @@ const AdminAppointmentPage = () => {
     const newStatus = itemToUpdate.status === 'done' ? 'pending' : 'done';
 
     try {
-      const res = await fetch(`https://dev-capsule-server.vercel.app/appointments/${itemToUpdate._id}`, {
+      const res = await fetch(`http://api.devcapsule.com/appointments/${itemToUpdate._id}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',

@@ -13,17 +13,21 @@ import { useEffect, useState, useRef } from 'react';
 import { useInView } from 'framer-motion';
 import imgDesign from "../../public/assets/Group 43.png";
 import imgDesign2 from "../../public/assets/Group 44.png";
-
+import emailjs from "@emailjs/browser";
 import Image from 'next/image';
 import { ImFacebook } from 'react-icons/im';
 import { GrInstagram } from 'react-icons/gr';
 import { FaLinkedin, FaSquareXTwitter } from 'react-icons/fa6';
 import { IoMdMail } from "react-icons/io";
 import { FaPhone } from "react-icons/fa6";
+import Link from 'next/link';
+import { useRouter } from "next/navigation";
+import Swal from 'sweetalert2'
 
 export default function ContactPage() {
   const [isVisible, setIsVisible] = useState(false);
-
+  const [loading, setLoading] = useState(false);
+  const router = useRouter();
   useEffect(() => {
     setIsVisible(true);
   }, []);
@@ -45,26 +49,47 @@ export default function ContactPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-     console.log("Submitting form with data:", formData);
+     setLoading(true); // Start loading
+    console.log("Submitting form with data:", formData);
 
-    // emailjs.send(
-    //   'service_z9grx78',     // e.g. service_abc123
-    //   'YOUR_TEMPLATE_ID',    // e.g. template_xyz789
-    //   formData,
-    //   '_kJS9IiTVrRw4fRz3'      // e.g. _Gx3T3LAbCdEfGH
-    // ).then((result) => {
-    //   alert('Message sent successfully!');
-    //   setFormData({
-    //     full_name: '',
-    //     email: '',
-    //     service: '',
-    //     budget: '',
-    //     description: '',
-    //   });
-    // }).catch((error) => {
-    //   alert('Failed to send message.');
-    //   console.error(error);
-    // });
+    emailjs.send(
+      'service_lqk4fnc',     // e.g. service_abc123
+      'template_2r78cy7',    // e.g. template_xyz789
+      formData,
+      'Lll9_5TRi66kgrqgP'
+    ).then((result) => {
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Message sent successfully!",
+        showConfirmButton: false,
+        timer: 1500
+      });
+      setFormData({
+        full_name: '',
+        email: '',
+        service: '',
+        budget: '',
+        description: '',
+      });
+
+      setTimeout(() => {
+        router.push("/");
+      }, 1500);
+
+    }).catch((error) => {
+      // alert('Failed to send message.');
+      Swal.fire({
+        position: "center",
+        icon: "error",
+        title: "Oops! Failed to send your message. Please try again.",
+        showConfirmButton: false,
+        timer: 1500
+      });
+      console.error(error);
+    }).finally(() => {
+    setLoading(false); // Always stop loading
+  });
   };
 
   return (
@@ -76,7 +101,7 @@ export default function ContactPage() {
           <Image
             src={imgDesign2}
             alt="Design Graphic"
-            className="w-[200px] md:w-[260px]"
+            className="w-[150px] md:w-[250px]"
           />
         </div>
 
@@ -124,12 +149,29 @@ export default function ContactPage() {
                 />
 
               </div>
-              <div className='flex md:hidden justify-end items-start absolute top-[300px] right-1.5 md:right-9'>
-                <div className="space-y-4 ">
-                  <ImFacebook className="text-black text-xl font-semibold" />
-                  <GrInstagram className="text-black text-xl font-semibold" />
-                  <FaLinkedin className="text-black text-xl font-semibold" />
-                  <FaSquareXTwitter className="text-black text-xl font-semibold" />
+              <div className='flex md:hidden justify-end items-start absolute top-[300px] right-5 md:right-9'>
+                <div className="space-y-4    ">
+
+                  <div>
+                    <Link href="https://www.facebook.com/share/16YNTbkFNR/" target="_blank" rel="noopener noreferrer">
+                      <ImFacebook className="text-black text-xl transition-all duration-300 hover:text-[#7412FF] hover:scale-110" />
+                    </Link>
+                  </div>
+                  <div>
+                    <Link href="https://www.instagram.com/devcapsuleeu?igsh=d2djdDlidjdic3pz" target="_blank" rel="noopener noreferrer">
+                      <GrInstagram className="text-black text-xl transition-all duration-300 hover:text-[#7412FF] hover:scale-110" />
+                    </Link>
+                  </div>
+                  <div>
+                    <Link href="https://www.linkedin.com/company/dev-capsule/" target="_blank" rel="noopener noreferrer">
+                      <FaLinkedin className="text-black text-xl transition-all duration-300 hover:text-[#7412FF] hover:scale-110" />
+                    </Link>
+                  </div>
+                  <div>
+                    <Link href="https://x.com/dev_capsuleeu?t=i48UEkQwyAMfym8GjvNSAQ&s=09" target="_blank" rel="noopener noreferrer">
+                      <FaSquareXTwitter className="text-black text-xl transition-all duration-300 hover:text-[#7412FF] hover:scale-110" />
+                    </Link>
+                  </div>
 
                 </div>
 
@@ -152,7 +194,7 @@ export default function ContactPage() {
                             onChange={handleChange}
                             required
                             name="full_name"
-                           
+
 
 
                             placeholder="Enter your full name"
@@ -174,7 +216,7 @@ export default function ContactPage() {
                             value={formData.email}
                             onChange={handleChange}
                             required
-                             name="email"
+                            name="email"
 
                             placeholder="Enter your email"
                             className={`w-full  pr-4    
@@ -192,7 +234,7 @@ export default function ContactPage() {
 
                           <select
                             id="service"
-                             name="service"
+                            name="service"
                             value={formData.service}
                             onChange={handleChange}
                             className="w-full pr-4  rounded-md focus:outline-none transition-colors text-base"
@@ -266,9 +308,22 @@ export default function ContactPage() {
                       </div> */}
 
                       <div className="flex justify-end ">
-                        <button  type="submit"  className='w-full py-2 bg-[#7412FF] text-white flex justify-center items-center gap-1 rounded-xl'><Send className="w-4 h-4 mr-2" /> Submit </button>
+                        {/* <button type="submit" className='w-full py-2 bg-[#7412FF] text-white flex justify-center items-center gap-1 rounded-xl'><Send className="w-4 h-4 mr-2" /> Submit </button> */}
+                        <button
+                          type="submit"
+                          disabled={loading}
+                          className={`w-full py-2 rounded-xl text-white flex justify-center items-center gap-2 
+    ${loading ? "bg-gray-400 cursor-not-allowed" : "bg-[#7412FF] hover:bg-[#5c0fd9]"}`}
+                        >
+                          {loading ? "Submitting..." : (
+                            <>
+                              <Send className="w-4 h-4 mr-2" /> Submit
+                            </>
+                          )}
+                        </button>
 
                       </div>
+
                     </form>
                   </CardContent>
                 </Card>
@@ -277,11 +332,28 @@ export default function ContactPage() {
               {/* Contact Info */}
               <div className='hidden md:flex w-full'>
                 <div className='flex justify-end items-start w-full'>
-                  <div className="space-y-4 ">
-                    <ImFacebook className="text-black text-xl font-semibold" />
-                    <GrInstagram className="text-black text-xl font-semibold" />
-                    <FaLinkedin className="text-black text-xl font-semibold" />
-                    <FaSquareXTwitter className="text-black text-xl font-semibold" />
+                  <div className="space-y-4    ">
+
+                    <div>
+                      <Link href="https://www.facebook.com/share/16YNTbkFNR/" target="_blank" rel="noopener noreferrer">
+                        <ImFacebook className="text-black text-xl transition-all duration-300 hover:text-[#7412FF] hover:scale-110" />
+                      </Link>
+                    </div>
+                    <div>
+                      <Link href="https://www.instagram.com/devcapsuleeu?igsh=d2djdDlidjdic3pz" target="_blank" rel="noopener noreferrer">
+                        <GrInstagram className="text-black text-xl transition-all duration-300 hover:text-[#7412FF] hover:scale-110" />
+                      </Link>
+                    </div>
+                    <div>
+                      <Link href="https://www.linkedin.com/company/dev-capsule/" target="_blank" rel="noopener noreferrer">
+                        <FaLinkedin className="text-black text-xl transition-all duration-300 hover:text-[#7412FF] hover:scale-110" />
+                      </Link>
+                    </div>
+                    <div>
+                      <Link href="https://x.com/dev_capsuleeu?t=i48UEkQwyAMfym8GjvNSAQ&s=09" target="_blank" rel="noopener noreferrer">
+                        <FaSquareXTwitter className="text-black text-xl transition-all duration-300 hover:text-[#7412FF] hover:scale-110" />
+                      </Link>
+                    </div>
 
                   </div>
 

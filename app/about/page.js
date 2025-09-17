@@ -29,6 +29,7 @@ import { FaLinkedin, FaSquareXTwitter } from 'react-icons/fa6';
 import { motion } from "framer-motion";
 import { useEffect, useState, useRef } from 'react';
 import { useInView } from 'framer-motion';
+import Link from 'next/link';
 
 export default function AboutPage() {
     const [activeTab, setActiveTab] = useState('mission');
@@ -120,19 +121,31 @@ export default function AboutPage() {
             image: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop"
         }
     ];
+    const fadeInUp = {
+        hidden: { opacity: 0, y: 30 },
+        visible: (i = 1) => ({
+            opacity: 1,
+            y: 0,
+            transition: {
+                delay: i * 0.2,
+                duration: 0.6,
+                ease: 'easeOut',
+            },
+        }),
+    };
 
     return (
         <div className="min-h-screen ">
             <Navbar></Navbar>
             {/* Hero Section */}
             <div className="relative" >
-                <div className=" hidden md:flex  absolute -bottom-[400px] md:top-1/2 -translate-y-[442px] right-0">
+                {/* <div className=" hidden md:flex  absolute -bottom-[400px] md:top-1/2 -translate-y-[442px] right-0">
                     <Image
                         src={imgDesign2}
                         alt="Design Graphic"
                         className="w-[200px] md:w-[260px] -z-10"
                     />
-                </div>
+                </div> */}
                 <div className="-z-10 hidden md:flex   absolute top-40 md:top-80 left-3 md:left-5">
                     <Image
                         src={imgDesign}
@@ -140,12 +153,28 @@ export default function AboutPage() {
                         className="w-28 md:w-72 "
                     />
                 </div>
-                <div className='hidden md:flex  justify-end items-start absolute top-[300px] md:top-[300px] right-5 md:right-9'>
+                <div className='hidden md:flex  justify-end items-start absolute top-[300px] md:top-[329px] right-5 md:right-9'>
                     <div className="space-y-4 ">
-                        <ImFacebook className="text-black text-xl font-semibold" />
-                        <GrInstagram className="text-black text-xl font-semibold" />
-                        <FaLinkedin className="text-black text-xl font-semibold" />
-                        <FaSquareXTwitter className="text-black text-xl font-semibold" />
+                        <div>
+                            <Link href="https://www.facebook.com/share/16YNTbkFNR/" target="_blank" rel="noopener noreferrer">
+                                <ImFacebook className="text-black text-xl transition-all duration-300 hover:text-[#7412FF] hover:scale-110" />
+                            </Link>
+                        </div>
+                        <div>
+                            <Link href="https://www.instagram.com/devcapsuleeu?igsh=d2djdDlidjdic3pz" target="_blank" rel="noopener noreferrer">
+                                <GrInstagram className="text-black text-xl transition-all duration-300 hover:text-[#7412FF] hover:scale-110" />
+                            </Link>
+                        </div>
+                        <div>
+                            <Link href="https://www.linkedin.com/company/dev-capsule/" target="_blank" rel="noopener noreferrer">
+                                <FaLinkedin className="text-black text-xl transition-all duration-300 hover:text-[#7412FF] hover:scale-110" />
+                            </Link>
+                        </div>
+                        <div>
+                            <Link href="https://x.com/dev_capsuleeu?t=i48UEkQwyAMfym8GjvNSAQ&s=09" target="_blank" rel="noopener noreferrer">
+                                <FaSquareXTwitter className="text-black text-xl transition-all duration-300 hover:text-[#7412FF] hover:scale-110" />
+                            </Link>
+                        </div>
 
                     </div>
 
@@ -157,7 +186,39 @@ export default function AboutPage() {
                 </div>
 
 
+                {/* <div>
+                    <div className="absolute z-50  w-full h-[100vh] flex justify-end items-center  -mt-28 md:mt-5 -ml-6 md:-ml-10">
+                        <div className="space-y-4  z-50  ">
 
+                            <div>
+                                <Link href="https://www.facebook.com/share/16YNTbkFNR/" target="_blank" rel="noopener noreferrer">
+                                    <ImFacebook className="text-black text-xl transition-all duration-300 hover:text-[#7412FF] hover:scale-110" />
+                                </Link>
+                            </div>
+                            <div>
+                                <Link href="https://www.instagram.com/devcapsuleeu?igsh=d2djdDlidjdic3pz" target="_blank" rel="noopener noreferrer">
+                                    <GrInstagram className="text-black text-xl transition-all duration-300 hover:text-[#7412FF] hover:scale-110" />
+                                </Link>
+                            </div>
+                            <div>
+                                <Link href="https://www.linkedin.com/company/dev-capsule/" target="_blank" rel="noopener noreferrer">
+                                    <FaLinkedin className="text-black text-xl transition-all duration-300 hover:text-[#7412FF] hover:scale-110" />
+                                </Link>
+                            </div>
+                            <div>
+                                <Link href="https://x.com/dev_capsuleeu?t=i48UEkQwyAMfym8GjvNSAQ&s=09" target="_blank" rel="noopener noreferrer">
+                                    <FaSquareXTwitter className="text-black text-xl transition-all duration-300 hover:text-[#7412FF] hover:scale-110" />
+                                </Link>
+                            </div>
+
+                        </div>
+
+
+
+
+
+                    </div>
+                </div> */}
 
 
                 <section className="relative pb-10 pt-24 md:pt-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
@@ -182,13 +243,22 @@ export default function AboutPage() {
 
                     </motion.div>
 
+
                 </section>
                 <div className="px-4 pt-4 pb-16 mx-auto sm:max-w-sm md:max-w-5xl md:px-24 lg:px-8 lg:pb-20">
 
 
                     <div className="grid max-w-5xl mx-auto space-y-6 lg:grid-cols-2 lg:space-y-0 lg:divide-x">
+                        {/* Left column */}
                         <div className="space-y-6 sm:px-16">
-                            <div className="flex flex-col max-w-md sm:flex-row">
+                            <motion.div
+                                className="flex flex-col max-w-md sm:flex-row"
+                                variants={fadeInUp}
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ once: true, amount: 0.3 }}
+                                custom={1}
+                            >
                                 <div className="mb-4 mr-4">
                                     <div className="flex items-center justify-center w-12 h-12 rounded-full bg-indigo-50">
                                         <svg className="w-8 h-8 text-deep-purple-accent-400 sm:w-10 sm:h-10" stroke="currentColor" viewBox="0 0 52 52">
@@ -202,9 +272,16 @@ export default function AboutPage() {
                                         From concept to deployment, we build tailored software solutions that solve real business problems with scalability and performance.
                                     </p>
                                 </div>
-                            </div>
+                            </motion.div>
 
-                            <div className="flex flex-col max-w-md sm:flex-row">
+                            <motion.div
+                                className="flex flex-col max-w-md sm:flex-row"
+                                variants={fadeInUp}
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ once: true, amount: 0.3 }}
+                                custom={2}
+                            >
                                 <div className="mb-4 mr-4">
                                     <div className="flex items-center justify-center w-12 h-12 rounded-full bg-indigo-50">
                                         <svg className="w-8 h-8 text-deep-purple-accent-400 sm:w-10 sm:h-10" stroke="currentColor" viewBox="0 0 52 52">
@@ -218,9 +295,16 @@ export default function AboutPage() {
                                         Our expert developers use modern frameworks like React, Next.js, and Node.js to build fast, secure, and responsive web apps.
                                     </p>
                                 </div>
-                            </div>
+                            </motion.div>
 
-                            <div className="flex flex-col max-w-md sm:flex-row">
+                            <motion.div
+                                className="flex flex-col max-w-md sm:flex-row"
+                                variants={fadeInUp}
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ once: true, amount: 0.3 }}
+                                custom={3}
+                            >
                                 <div className="mb-4 mr-4">
                                     <div className="flex items-center justify-center w-12 h-12 rounded-full bg-indigo-50">
                                         <svg className="w-8 h-8 text-deep-purple-accent-400 sm:w-10 sm:h-10" stroke="currentColor" viewBox="0 0 52 52">
@@ -234,11 +318,19 @@ export default function AboutPage() {
                                         We create user-focused designs that are both functional and visually appealing, ensuring seamless user experiences across all devices.
                                     </p>
                                 </div>
-                            </div>
+                            </motion.div>
                         </div>
 
+                        {/* Right column */}
                         <div className="space-y-6 sm:px-16">
-                            <div className="flex flex-col max-w-md sm:flex-row">
+                            <motion.div
+                                className="flex flex-col max-w-md sm:flex-row"
+                                variants={fadeInUp}
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ once: true, amount: 0.3 }}
+                                custom={4}
+                            >
                                 <div className="mb-4 mr-4">
                                     <div className="flex items-center justify-center w-12 h-12 rounded-full bg-indigo-50">
                                         <svg className="w-8 h-8 text-deep-purple-accent-400 sm:w-10 sm:h-10" stroke="currentColor" viewBox="0 0 52 52">
@@ -252,9 +344,16 @@ export default function AboutPage() {
                                         Migrate, manage, and scale your infrastructure on the cloud with our expertise in AWS, Azure, and Google Cloud Platform.
                                     </p>
                                 </div>
-                            </div>
+                            </motion.div>
 
-                            <div className="flex flex-col max-w-sm sm:flex-row">
+                            <motion.div
+                                className="flex flex-col max-w-sm sm:flex-row"
+                                variants={fadeInUp}
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ once: true, amount: 0.3 }}
+                                custom={5}
+                            >
                                 <div className="mb-4 mr-4">
                                     <div className="flex items-center justify-center w-12 h-12 rounded-full bg-indigo-50">
                                         <svg className="w-8 h-8 text-deep-purple-accent-400 sm:w-10 sm:h-10" stroke="currentColor" viewBox="0 0 52 52">
@@ -268,9 +367,16 @@ export default function AboutPage() {
                                         We build powerful mobile applications using React Native and Flutter that deliver high performance and smooth user interaction.
                                     </p>
                                 </div>
-                            </div>
+                            </motion.div>
 
-                            <div className="flex flex-col max-w-sm sm:flex-row">
+                            <motion.div
+                                className="flex flex-col max-w-sm sm:flex-row"
+                                variants={fadeInUp}
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ once: true, amount: 0.3 }}
+                                custom={6}
+                            >
                                 <div className="mb-4 mr-4">
                                     <div className="flex items-center justify-center w-12 h-12 rounded-full bg-indigo-50">
                                         <svg className="w-8 h-8 text-deep-purple-accent-400 sm:w-10 sm:h-10" stroke="currentColor" viewBox="0 0 52 52">
@@ -284,7 +390,7 @@ export default function AboutPage() {
                                         Our job doesn't end after delivery. We offer long-term support and maintenance to ensure your tech stays ahead of the curve.
                                     </p>
                                 </div>
-                            </div>
+                            </motion.div>
                         </div>
                     </div>
                 </div>
@@ -462,7 +568,7 @@ export default function AboutPage() {
                                 </div>
                             </div>
                             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-                               
+
                             </h2>
                             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
                                 Talented professionals dedicated to bringing your vision to life
