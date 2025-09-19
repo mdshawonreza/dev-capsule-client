@@ -40,6 +40,7 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen flex flex-col ">
       <Navbar />
+
       
       <main className="flex-1 flex items-center justify-center mt-20 p-4 md:p-8">
         <Card className="w-full max-w-md">
@@ -47,6 +48,7 @@ export default function LoginPage() {
             <CardTitle className="text-2xl font-bold">Sign In</CardTitle>
             <CardDescription>
               Enter your credentials to access your account
+              {/* ok */}
             </CardDescription>
           </CardHeader>
           
