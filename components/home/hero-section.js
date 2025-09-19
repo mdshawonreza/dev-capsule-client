@@ -119,8 +119,8 @@ const scrollToSection = () => {
           </h1>
 
 
-          <div className="flex justify-center gap-3 md:gap-4 relative z-20 flex-wrap">
-            <button className="hover:bg-[#7412FF] text-[#7412FF] hover:text-white px-3 md:px-4 py-1 md:py-1 rounded-full transition duration-300 border-2 border-[#7412FF] text-sm md:text-base  font-semibold flex justify-center items-center gap-2">
+          <div className="flex justify-center gap-3 md:gap-4 relative z-50 flex-wrap">
+            <button className="bg-[#7412FF] text-white px-3 md:px-4 py-1 md:py-1 rounded-full transition duration-300 border-2 border-[#7412FF] text-sm md:text-base  font-semibold flex justify-center items-center gap-2">
               Hire Us <FaArrowRight />
             </button>
             <Link href="/appointment">
