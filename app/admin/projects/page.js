@@ -59,7 +59,7 @@ const router = useRouter();
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await fetch('http://api.devcapsule.com/projects');
+        const response = await fetch('https://api.devcapsule.com/projects');
         if (!response.ok) throw new Error('Failed to fetch projects');
         const data = await response.json();
         setProjects(data);
@@ -101,7 +101,7 @@ const router = useRouter();
   }).then(async (result) => {
     if (result.isConfirmed) {
       try {
-        const res = await fetch(`http://api.devcapsule.com/projects/${id}`, {
+        const res = await fetch(`https://api.devcapsule.com/projects/${id}`, {
           method: 'DELETE',
         });
         if (!res.ok) throw new Error('Failed to delete');

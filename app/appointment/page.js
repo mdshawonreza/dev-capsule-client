@@ -142,7 +142,7 @@ export default function AppointmentPage() {
             });
 
         try {
-            const res = await fetch('http://api.devcapsule.com/appointments', {
+            const res = await fetch('https://api.devcapsule.com/appointments', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(appointmentData),

@@ -18,7 +18,7 @@ export default function CreateProject() {
 
   const router = useRouter();
   const IMGBB_API_KEY = "8b84a87eec39cec79744875059304928"; // Replace with your key
-  const API_BASE = process.env.NEXT_PUBLIC_API_BASE || "http://api.devcapsule.com";
+  const API_BASE = process.env.NEXT_PUBLIC_API_BASE || "https://api.devcapsule.com";
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });

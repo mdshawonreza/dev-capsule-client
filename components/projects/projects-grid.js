@@ -25,7 +25,7 @@ export default function ProjectsGrid() {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const res = await fetch('http://api.devcapsule.com/projects');
+        const res = await fetch('https://api.devcapsule.com/projects');
         if (!res.ok) throw new Error('Failed to fetch projects');
         const data = await res.json();
         setProjects(data);

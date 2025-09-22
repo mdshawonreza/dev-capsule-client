@@ -23,7 +23,7 @@ export default function EditProjectPage({ params }) {
   useEffect(() => {
     async function fetchProject() {
       try {
-        const res = await fetch(`http://api.devcapsule.com/projects/${id}`);
+        const res = await fetch(`https://api.devcapsule.com/projects/${id}`);
         const project = await res.json();
         setFormData({
           title: project.title || "",
@@ -53,7 +53,7 @@ export default function EditProjectPage({ params }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const res = await fetch(`http://api.devcapsule.com/projects/${id}`, {
+    const res = await fetch(`https://api.devcapsule.com/projects/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
