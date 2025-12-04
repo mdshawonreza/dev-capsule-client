@@ -9,6 +9,7 @@ import BlogSection from '@/components/home/blog-section';
 import ContactSection from '@/components/home/contact-section';
 import AboutSection from '@/components/home/about-section';
 import BreakingSection from '@/components/home/breaking-section';
+import VideoSection from '@/components/home/video-section';
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Navbar />
       <HeroSection />
       <AboutSection></AboutSection>
+      <VideoSection></VideoSection>
       
       <div className='relative '>
         <ProjectsSection />

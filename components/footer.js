@@ -95,36 +95,40 @@ export default function Footer() {
 
 
 
-          <div className=' flex justify-center'>
-
-
+          <div className='flex justify-center'>
             <div className='flex flex-col md:justify-end gap-2'>
-              <h4 className='text-lg text-white font-semibold text-right'>
-                Privacy Policy
 
-              </h4>
+              {/* UPDATED: Privacy Policy + Terms */}
+              <div className="flex items-center justify-end space-x-2 text-white font-semibold text-lg">
+                <Link href="/policy" className="hover:text-[#7412FF] transition-colors">
+                  Privacy Policy
+                </Link>
+                <span>|</span>
+                <Link href="/terms" className="hover:text-[#7412FF] transition-colors">
+                  Terms & Conditions
+                </Link>
+              </div>
+
               <p className='text-base text-white font-normal hidden md:flex'>
-                © Devcapsule 2025 | All Rights Reserved
-
+                © Devcapsule {currentYear} | All Rights Reserved
               </p>
 
             </div>
           </div>
 
-
-
         </div>
-        <div className='text-center mt-4'>
 
-          <p className='text-base text-white font-normal md:hidden '>
-            © Devcapsule 2025 | All Rights Reserved
-
-          </p>
-
-        </div>
 
 
       </div>
-    </footer>
+      <div className='text-center mt-4'>
+        <p className='text-base text-white font-normal md:hidden'>
+          © Devcapsule {currentYear} | All Rights Reserved
+        </p>
+      </div>
+
+
+   
+    </footer >
   );
 }

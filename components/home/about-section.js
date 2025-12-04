@@ -42,16 +42,16 @@ const aboutUs = () => {
                         <div className="mb-4 transition-shadow duration-300  lg:mb-6">
                             <div className='flex justify-center mb-6'>
                                 <div className="space-x-4 flex ">
-                                    <Link  href="/contact">
-                                    <button className="hover:bg-[#7412FF] text-[#7412FF] hover:text-white px-3 md:px-6 py-1 md:py-2 rounded-full transition duration-300 border-2 border-[#7412FF] text-sm md:text-xl font-semibold flex justify-center items-center gap-2">
-                                        <FaPhone /> Contact
-                                    </button>
+                                    <Link href="/contact">
+                                        <button className="hover:bg-[#7412FF] text-[#7412FF] hover:text-white px-3 md:px-6 py-1 md:py-2 rounded-full transition duration-300 border-2 border-[#7412FF] text-sm md:text-xl font-semibold flex justify-center items-center gap-2">
+                                            <FaPhone /> Contact
+                                        </button>
                                     </Link>
 
-                                    <Link  href="/appointment">
-                                    <button className="hover:bg-[#7412FF] text-[#7412FF] hover:text-white px-3 md:px-6 py-1 md:py-2 rounded-full transition duration-300 border-2 border-[#7412FF] text-sm md:text-xl font-semibold flex justify-center items-center gap-2">
-                                        Free Consultancy
-                                    </button>
+                                    <Link href="/appointment">
+                                        <button className="hover:bg-[#7412FF] text-[#7412FF] hover:text-white px-3 md:px-6 py-1 md:py-2 rounded-full transition duration-300 border-2 border-[#7412FF] text-sm md:text-xl font-semibold flex justify-center items-center gap-2">
+                                            Free Consultancy
+                                        </button>
                                     </Link>
 
 
@@ -64,6 +64,9 @@ const aboutUs = () => {
                                 height={750}
                                 alt="Descriptive alt text"
                             />
+
+
+                            
                         </div>
 
                     </div>

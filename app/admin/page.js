@@ -6,6 +6,28 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContaine
 import { Users, Briefcase, FileText, Activity } from 'lucide-react';
 
 export default function AdminDashboard() {
+
+
+const [projects, setProjects] = useState([]);
+
+
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const res = await fetch('https://api.devcapsule.com/projects');
+        if (!res.ok) throw new Error('Failed to fetch projects');
+        const data = await res.json();
+        setProjects(data);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProjects();
+  }, []);
   // Mock data for demonstration
   const [stats, setStats] = useState([
     { name: 'Projects', value: 25, icon: Briefcase, color: 'bg-blue-500' },
@@ -89,29 +111,29 @@ export default function AdminDashboard() {
           </CardHeader>
           <CardContent>
             <div className="rounded-md border">
-              <div className="grid grid-cols-5 p-4 font-medium text-sm bg-muted/50">
+              <div className="grid grid-cols-4 p-4 font-medium text-sm bg-muted/50">
                 <div className="col-span-2">Project</div>
-                <div>Client</div>
-                <div>Status</div>
-                <div>Date</div>
+                <div>Slug</div>
+                <div>category</div>
+                {/* <div>Date</div> */}
               </div>
               <div className="divide-y">
-                {recentProjects.map((project) => (
-                  <div key={project.id} className="grid grid-cols-5 p-4 text-sm items-center">
-                    <div className="col-span-2 font-medium">{project.name}</div>
-                    <div className="text-muted-foreground">{project.client}</div>
+                {projects.map((project) => (
+                  <div key={project.id} className="grid grid-cols-4 p-4 text-sm items-center">
+                    <div className="col-span-2 font-medium">{project.title}</div>
+                    <div className="text-muted-foreground">{project.slug}</div>
                     <div>
                       <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
-                        project.status === 'Completed' 
+                        project.category === 'Completed' 
                           ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300' 
-                          : project.status === 'In Progress'
+                          : project.category === 'In Progress'
                           ? 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300'
                           : 'bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-300'
                       }`}>
-                        {project.status}
+                        {project.category}
                       </span>
                     </div>
-                    <div className="text-muted-foreground">{project.date}</div>
+                    {/* <div className="text-muted-foreground">{project.date}</div> */}
                   </div>
                 ))}
               </div>
